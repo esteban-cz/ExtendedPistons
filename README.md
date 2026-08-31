@@ -109,7 +109,9 @@ Lithium, Moonlight, and Open Parties and Claims present.
 Changes are developed on short-lived branches and merged into `main` through
 pull requests. GitHub CI runs the focused tests, dedicated-server GameTests, and
 release build for every pull request. See [CONTRIBUTING.md](CONTRIBUTING.md) for
-the branch naming, validation, pull-request, and release process.
+the branch naming, validation, pull-request, and release process. Planned
+loader, Minecraft-version, compatibility, and polish work is described in the
+[project roadmap](ROADMAP.md).
 
 ## Version baselines
 

@@ -43,3 +43,6 @@ Desktop.ini
 
 # Local vanilla texture references used while creating the custom artwork.
 /src/main/resources/assets/extendedpistons/textures/block/vanilla/
+
+# Maintainer's private working checklist. Public goals belong in ROADMAP.md.
+/TODO.local.md
