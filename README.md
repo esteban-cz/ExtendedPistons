@@ -103,6 +103,13 @@ clone. Version 1.0.0 was smoke-tested this way against BMC5 v51's 348 installed
 JARs; the client completed resource loading with Iris, ImmediatelyFast,
 Lithium, Moonlight, and Open Parties and Claims present.
 
+## Development workflow
+
+Changes are developed on short-lived branches and merged into `main` through
+pull requests. GitHub CI runs the focused tests, dedicated-server GameTests, and
+release build for every pull request. See [CONTRIBUTING.md](CONTRIBUTING.md) for
+the branch naming, validation, pull-request, and release process.
+
 ## Version baselines
 
 The verified 1.0.0 through 1.0.9 releases are preserved under their matching
