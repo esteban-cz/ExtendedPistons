@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "extendedpistons:block/movement_transaction" }
+  }
+}

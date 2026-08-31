@@ -1,0 +1,5 @@
+Copyright (c) 2026 estyxq. All Rights Reserved.
+
+No permission is granted to copy, modify, redistribute, or publish this software
+or its assets except where required by applicable law or separately authorized
+in writing by the copyright holder.

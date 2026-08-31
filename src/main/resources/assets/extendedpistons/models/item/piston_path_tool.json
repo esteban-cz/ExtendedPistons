@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "extendedpistons:item/piston_path_tool"
+  }
+}

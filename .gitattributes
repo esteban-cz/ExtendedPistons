@@ -1,0 +1,23 @@
+* text=auto
+
+# Keep project text files consistent across Windows and Unix environments.
+*.java text eol=lf
+*.gradle text eol=lf
+*.properties text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.json5 text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+gradlew text eol=lf
+*.bat text eol=crlf
+
+# Do not apply line-ending conversion to packaged or visual assets.
+*.jar binary
+*.png binary
+*.gif binary
+*.jpg binary
+*.jpeg binary
+*.ogg binary

@@ -1,0 +1,11 @@
+{
+  "multipart": [
+    { "apply": { "model": "extendedpistons:block/piston_shaft_center" } },
+    { "when": { "north": "true" }, "apply": { "model": "extendedpistons:block/piston_shaft_arm" } },
+    { "when": { "south": "true" }, "apply": { "model": "extendedpistons:block/piston_shaft_arm", "y": 180 } },
+    { "when": { "east": "true" }, "apply": { "model": "extendedpistons:block/piston_shaft_arm", "y": 90 } },
+    { "when": { "west": "true" }, "apply": { "model": "extendedpistons:block/piston_shaft_arm", "y": 270 } },
+    { "when": { "up": "true" }, "apply": { "model": "extendedpistons:block/piston_shaft_arm", "x": 270 } },
+    { "when": { "down": "true" }, "apply": { "model": "extendedpistons:block/piston_shaft_arm", "x": 90 } }
+  ]
+}

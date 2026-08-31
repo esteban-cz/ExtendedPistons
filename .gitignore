@@ -1,0 +1,45 @@
+# Gradle and compiled output
+/.gradle/
+/build/
+/out/
+/bin/
+
+# Minecraft/NeoForge development runtime
+/run/
+/run-*/
+/config/
+/defaultconfigs/
+/local/
+/logs/
+/tmp/
+/.mixin.out/
+/crash-reports/
+/saves/
+*.log
+*.log.gz
+hs_err_pid*.log
+*.hprof
+
+# Generated resources
+/src/generated/resources/.cache/
+
+# IDE metadata
+/.idea/
+/.vscode/
+/.settings/
+/eclipse/
+*.iml
+.classpath
+.project
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Historical binaries stay available locally. Publish distributable JARs as
+# GitHub Release assets instead of storing them in source-control history.
+/releases/**/*.jar
+
+# Local vanilla texture references used while creating the custom artwork.
+/src/main/resources/assets/extendedpistons/textures/block/vanilla/

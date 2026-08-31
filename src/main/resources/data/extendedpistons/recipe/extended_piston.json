@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    { "item": "minecraft:piston" },
+    { "item": "minecraft:iron_ingot" },
+    { "item": "minecraft:redstone" }
+  ],
+  "result": {
+    "id": "extendedpistons:extended_piston",
+    "count": 1
+  }
+}

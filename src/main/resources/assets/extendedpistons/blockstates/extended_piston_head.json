@@ -1,0 +1,33 @@
+{
+  "multipart": [
+    { "when": { "facing": "north", "sticky": "false" }, "apply": { "model": "extendedpistons:block/piston_head_plate" } },
+    { "when": { "facing": "south", "sticky": "false" }, "apply": { "model": "extendedpistons:block/piston_head_plate", "y": 180 } },
+    { "when": { "facing": "east", "sticky": "false" }, "apply": { "model": "extendedpistons:block/piston_head_plate", "y": 90 } },
+    { "when": { "facing": "west", "sticky": "false" }, "apply": { "model": "extendedpistons:block/piston_head_plate", "y": 270 } },
+    { "when": { "facing": "up", "sticky": "false" }, "apply": { "model": "extendedpistons:block/piston_head_plate", "x": 270 } },
+    { "when": { "facing": "down", "sticky": "false" }, "apply": { "model": "extendedpistons:block/piston_head_plate", "x": 90 } },
+
+    { "when": { "facing": "north", "sticky": "true" }, "apply": { "model": "extendedpistons:block/piston_head_plate_sticky" } },
+    { "when": { "facing": "south", "sticky": "true" }, "apply": { "model": "extendedpistons:block/piston_head_plate_sticky", "y": 180 } },
+    { "when": { "facing": "east", "sticky": "true" }, "apply": { "model": "extendedpistons:block/piston_head_plate_sticky", "y": 90 } },
+    { "when": { "facing": "west", "sticky": "true" }, "apply": { "model": "extendedpistons:block/piston_head_plate_sticky", "y": 270 } },
+    { "when": { "facing": "up", "sticky": "true" }, "apply": { "model": "extendedpistons:block/piston_head_plate_sticky", "x": 270 } },
+    { "when": { "facing": "down", "sticky": "true" }, "apply": { "model": "extendedpistons:block/piston_head_plate_sticky", "x": 90 } },
+
+    { "apply": { "model": "extendedpistons:block/piston_shaft_center" } },
+
+    { "when": { "facing": "north" }, "apply": { "model": "extendedpistons:block/piston_head_inner_arm" } },
+    { "when": { "facing": "south" }, "apply": { "model": "extendedpistons:block/piston_head_inner_arm", "y": 180 } },
+    { "when": { "facing": "east" }, "apply": { "model": "extendedpistons:block/piston_head_inner_arm", "y": 90 } },
+    { "when": { "facing": "west" }, "apply": { "model": "extendedpistons:block/piston_head_inner_arm", "y": 270 } },
+    { "when": { "facing": "up" }, "apply": { "model": "extendedpistons:block/piston_head_inner_arm", "x": 270 } },
+    { "when": { "facing": "down" }, "apply": { "model": "extendedpistons:block/piston_head_inner_arm", "x": 90 } },
+
+    { "when": { "connection": "north" }, "apply": { "model": "extendedpistons:block/piston_shaft_arm" } },
+    { "when": { "connection": "south" }, "apply": { "model": "extendedpistons:block/piston_shaft_arm", "y": 180 } },
+    { "when": { "connection": "east" }, "apply": { "model": "extendedpistons:block/piston_shaft_arm", "y": 90 } },
+    { "when": { "connection": "west" }, "apply": { "model": "extendedpistons:block/piston_shaft_arm", "y": 270 } },
+    { "when": { "connection": "up" }, "apply": { "model": "extendedpistons:block/piston_shaft_arm", "x": 270 } },
+    { "when": { "connection": "down" }, "apply": { "model": "extendedpistons:block/piston_shaft_arm", "x": 90 } }
+  ]
+}

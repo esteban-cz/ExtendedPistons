@@ -1,0 +1,20 @@
+{
+  "block.extendedpistons.extended_piston": "Extended Piston",
+  "block.extendedpistons.extended_sticky_piston": "Extended Sticky Piston",
+  "block.extendedpistons.piston_shaft": "Extended Piston Shaft",
+  "block.extendedpistons.extended_piston_head": "Extended Piston Head",
+  "item.extendedpistons.piston_path_tool": "Piston Path Tool",
+  "tooltip.extendedpistons.path_tool.aim": "Aim directly at a path endpoint face",
+  "tooltip.extendedpistons.path_tool.add": "Right-click a face: add one segment that way",
+  "tooltip.extendedpistons.path_tool.remove": "Left-click: remove one final segment",
+  "tooltip.extendedpistons.path_tool.requirements": "Piston must be unpowered and fully retracted",
+  "message.extendedpistons.path.added": "Added path segment (%s total)",
+  "message.extendedpistons.path.removed": "Removed path segment (%s remaining)",
+  "message.extendedpistons.path.minimum": "A piston path must contain at least one segment",
+  "message.extendedpistons.path.invalid": "That path segment is not valid",
+  "message.extendedpistons.path.stale": "The piston path changed; try again",
+  "message.extendedpistons.path.too_far": "The piston endpoint is out of reach",
+  "message.extendedpistons.path.denied": "You cannot edit this piston",
+  "message.extendedpistons.path.aim_help": "Aim directly at a cyan endpoint face",
+  "message.extendedpistons.movement.blocked": "Extended piston movement is blocked"
+}
