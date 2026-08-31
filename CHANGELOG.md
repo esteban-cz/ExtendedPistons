@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.1 - In development
+## 1.1.1 - 2026-08-31
 
 - Replace the extended piston side and bottom artwork with the revised custom
   textures.
