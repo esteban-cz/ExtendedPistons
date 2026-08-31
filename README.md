@@ -13,7 +13,7 @@ elevator.
 - NeoForge 21.1.234 or a compatible 21.1 release
 - Java 21
 
-Place `extendedpistons-1.1.0.jar` in the instance's `mods` directory on the
+Place `extendedpistons-1.1.1.jar` in the instance's `mods` directory on the
 server and every connecting client. The mod has no required dependencies beyond
 Minecraft and NeoForge.
 
@@ -81,15 +81,16 @@ From PowerShell:
 .\gradlew.bat build
 ```
 
-The automated suite contains 19 focused packed-path/network/transaction tests and
-44 dedicated-server GameTests, including all 30 acceptance scenarios from the
+The automated suite contains 21 focused packed-path, network, transaction, and
+model-geometry tests, plus 44 dedicated-server GameTests, including all 30
+acceptance scenarios from the
 specification plus slime, honey, entity, destroy-reaction, block-entity, and
 sticky-component coverage. It also verifies that replacement pistons receive a
 fresh path and that every extended-base shape matches vanilla. The entity tests
 include a connected server player lifted by an upward-moving payload.
 
 The release artifact is produced at
-`build/libs/extendedpistons-1.1.0.jar`. A local BMC5 mod directory may be attached
+`build/libs/extendedpistons-1.1.1.jar`. A local BMC5 mod directory may be attached
 to development runs without publishing its files as dependencies:
 
 ```powershell
@@ -112,10 +113,10 @@ the branch naming, validation, pull-request, and release process.
 
 ## Version baselines
 
-The verified 1.0.0 through 1.0.9 releases are preserved under their matching
+The verified 1.0.0 through 1.1.0 releases are preserved under their matching
 `releases/` directories and are not affected by Gradle clean/build operations.
-Development after those baselines is versioned as 1.1.0 so all eleven JARs can
-be compared directly.
+Development after those baselines is versioned as 1.1.1 so all archived JARs
+can be compared directly.
 
 ## Known conservative limitations
 

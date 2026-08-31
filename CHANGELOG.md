@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.1 - In development
+
+- Replace the extended piston side and bottom artwork with the revised custom
+  textures.
+- Remove overlapping shaft-center and connector geometry that caused stationary
+  shaft textures to shimmer or appear to crawl as the camera moved.
+- Remove hidden connector end caps and apply the same seamless geometry to the
+  piston head's plate-side arm without changing collision or movement behavior.
+
 ## 1.1.0 - 2026-08-31
 
 - Introduce the first complete custom visual set for Extended Pistons, including
