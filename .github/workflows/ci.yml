@@ -18,9 +18,16 @@ concurrency:
 
 jobs:
   verify:
-    name: Verify (Java 21)
+    name: Verify (NeoForge ${{ matrix.neoforge }}, Java 21)
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        neoforge:
+          - 21.1.1
+          - 21.1.233
+          - 21.1.234
 
     steps:
       - name: Check out source
@@ -41,18 +48,18 @@ jobs:
         run: chmod +x gradlew
 
       - name: Run focused tests
-        run: ./gradlew --no-daemon test
+        run: ./gradlew --no-daemon -Pneo_version=${{ matrix.neoforge }} test
 
       - name: Run dedicated-server GameTests
-        run: ./gradlew --no-daemon runGameTestServer
+        run: ./gradlew --no-daemon -Pneo_version=${{ matrix.neoforge }} runGameTestServer
 
       - name: Build release JAR
-        run: ./gradlew --no-daemon build
+        run: ./gradlew --no-daemon -Pneo_version=${{ matrix.neoforge }} build
 
       - name: Upload built JAR
         uses: actions/upload-artifact@v7
         with:
-          name: extendedpistons-${{ github.sha }}
+          name: extendedpistons-neoforge-${{ matrix.neoforge }}-${{ github.sha }}
           path: build/libs/extendedpistons-*.jar
           if-no-files-found: error
           retention-days: 14

@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.1.2 - 2026-09-01
+
+- Support the complete published NeoForge 21.1.x line for Minecraft 1.21.1,
+  starting at 21.1.1, instead of unnecessarily requiring 21.1.234 or newer.
+- Separate the NeoForge development dependency from the published runtime
+  version range so routine development upgrades do not silently raise the
+  minimum supported loader version.
+- Add automated metadata and CI coverage for both the minimum supported
+  NeoForge version and the development version.
+- Keep the Minecraft dependency restricted to exactly 1.21.1; later Minecraft
+  1.21 patch releases require their own tested ports and JARs.
+
 ## 1.1.1 - 2026-08-31
 
 - Replace the extended piston side and bottom artwork with the revised custom

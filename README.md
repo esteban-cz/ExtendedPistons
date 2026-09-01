@@ -10,12 +10,16 @@ elevator.
 ## Requirements
 
 - Minecraft 1.21.1
-- NeoForge 21.1.234 or a compatible 21.1 release
+- NeoForge 21.1.1 or a newer 21.1.x release
 - Java 21
 
-Place `extendedpistons-1.1.1.jar` in the instance's `mods` directory on the
+Place `extendedpistons-1.1.2.jar` in the instance's `mods` directory on the
 server and every connecting client. The mod has no required dependencies beyond
 Minecraft and NeoForge.
+
+NeoForge 21.1.x is the loader line for Minecraft 1.21.1. Other Minecraft 1.21
+patch releases use different NeoForge lines and require separately ported mod
+builds; this JAR deliberately accepts Minecraft 1.21.1 only.
 
 ## Controls
 
@@ -81,16 +85,16 @@ From PowerShell:
 .\gradlew.bat build
 ```
 
-The automated suite contains 21 focused packed-path, network, transaction, and
-model-geometry tests, plus 44 dedicated-server GameTests, including all 30
-acceptance scenarios from the
-specification plus slime, honey, entity, destroy-reaction, block-entity, and
-sticky-component coverage. It also verifies that replacement pistons receive a
-fresh path and that every extended-base shape matches vanilla. The entity tests
-include a connected server player lifted by an upward-moving payload.
+The automated suite contains 22 focused packed-path, network, transaction,
+metadata, and model-geometry tests, plus 44 dedicated-server GameTests,
+including all 30 acceptance scenarios from the specification plus slime, honey,
+entity, destroy-reaction, block-entity, and sticky-component coverage. It also
+verifies that replacement pistons receive a fresh path and that every
+extended-base shape matches vanilla. The entity tests include a connected
+server player lifted by an upward-moving payload.
 
 The release artifact is produced at
-`build/libs/extendedpistons-1.1.1.jar`. A local BMC5 mod directory may be attached
+`build/libs/extendedpistons-1.1.2.jar`. A local BMC5 mod directory may be attached
 to development runs without publishing its files as dependencies:
 
 ```powershell
@@ -115,10 +119,10 @@ loader, Minecraft-version, compatibility, and polish work is described in the
 
 ## Version baselines
 
-The verified 1.0.0 through 1.1.0 releases are preserved under their matching
+The verified 1.0.0 through 1.1.1 releases are preserved under their matching
 `releases/` directories and are not affected by Gradle clean/build operations.
-Development after those baselines is versioned as 1.1.1 so all archived JARs
-can be compared directly.
+Version 1.1.2 widens the verified NeoForge 1.21.1 runtime range without changing
+world data or gameplay behavior, so all archived JARs can be compared directly.
 
 ## Known conservative limitations
 
