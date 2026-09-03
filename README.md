@@ -322,4 +322,14 @@ Archived JARs can therefore be compared directly against the current release.
 
 ---
 
-Copyright (c) 2026 estyxq. All Rights Reserved.
+## License
+
+Extended Pistons is open-source software licensed under the
+[GNU General Public License v3.0](LICENSE).
+
+You are free to use, study, modify, and redistribute this project under the
+terms of the GPLv3. Modified and redistributed versions must remain licensed
+under the GPLv3 and retain the applicable copyright and license notices.
+
+Copyright © 2026 estyxq
+
