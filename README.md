@@ -45,7 +45,7 @@ Ingredients:
 * 1× Iron Ingot
 * 1× Redstone Dust
 
-![Extended Piston recipe](url)
+![Extended Piston recipe](https://raw.githubusercontent.com/esteban-cz/ExtendedPistons/refs/heads/main/images/recipe-extended-piston.png)
 
 Because the recipe is shapeless, the ingredients may be placed anywhere in the
 crafting grid.
@@ -59,7 +59,7 @@ Ingredients:
 * 1× Extended Piston
 * 1× Slime Ball
 
-![Extended Sticky Piston recipe](url)
+![Extended Sticky Piston recipe](https://raw.githubusercontent.com/esteban-cz/ExtendedPistons/refs/heads/main/images/recipe-extended-sticky-piston.png)
 
 ### Piston Path Tool
 
@@ -73,7 +73,7 @@ Ingredients:
 
 Crafting layout:
 
-![Piston Path Tool recipe](url)
+![Piston Path Tool recipe](https://raw.githubusercontent.com/esteban-cz/ExtendedPistons/refs/heads/main/images/recipe-piston-path-tool.png)
 
 The recipe is shaped, so the relative ingredient positions must match the
 recipe.
