@@ -3,6 +3,7 @@
   "block.extendedpistons.extended_sticky_piston": "Extended Sticky Piston",
   "block.extendedpistons.piston_shaft": "Extended Piston Shaft",
   "block.extendedpistons.extended_piston_head": "Extended Piston Head",
+  "block.extendedpistons.movement_transaction": "Moving Extended Piston",
   "item.extendedpistons.piston_path_tool": "Piston Path Tool",
   "tooltip.extendedpistons.path_tool.aim": "Aim directly at a path endpoint face",
   "tooltip.extendedpistons.path_tool.add": "Right-click a face: add one segment that way",

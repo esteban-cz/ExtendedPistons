@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.3 - 2026-09-10
+
+- Prevent upward-facing normal and sticky pistons from powering themselves through
+  a redstone block in front of their head, allowing retraction to finish.
+- Display "Moving Extended Piston" instead of a translation key for moving parts.
+
 ## 1.1.2 - 2026-09-01
 
 - Support the complete published NeoForge 21.1.x line for Minecraft 1.21.1,
