@@ -562,6 +562,85 @@ public final class ExtendedPistonGameTests {
         });
     }
 
+    @GameTest(template = "empty", timeoutTicks = 120)
+    public static void upwardStickyRedstonePayloadRetracts(GameTestHelper helper) {
+        redstonePayloadRetracts(helper, true, Direction.UP);
+    }
+
+    @GameTest(template = "empty", timeoutTicks = 120)
+    public static void upwardNormalRedstonePayloadRetracts(GameTestHelper helper) {
+        redstonePayloadRetracts(helper, false, Direction.UP);
+    }
+
+    @GameTest(template = "empty", timeoutTicks = 120)
+    public static void longUpwardStickyRedstonePayloadRetracts(GameTestHelper helper) {
+        redstonePayloadRetracts(helper, true, Direction.UP, Direction.UP, Direction.UP);
+    }
+
+    @GameTest(template = "empty", timeoutTicks = 120)
+    public static void longUpwardNormalRedstonePayloadRetracts(GameTestHelper helper) {
+        redstonePayloadRetracts(helper, false, Direction.UP, Direction.UP, Direction.UP);
+    }
+
+    @GameTest(template = "empty", timeoutTicks = 120)
+    public static void horizontalStickyRedstonePayloadRetracts(GameTestHelper helper) {
+        redstonePayloadRetracts(helper, true, Direction.EAST, Direction.EAST);
+    }
+
+    private static void redstonePayloadRetracts(GameTestHelper helper, boolean sticky,
+                                                 Direction facing, Direction... additionalDirections) {
+        ExtendedPistonBlockEntity piston = placeFacing(helper, sticky, facing, additionalDirections);
+        BlockPos payloadStart = BASE.relative(facing);
+        BlockPos payloadEnd = BASE.relative(facing, piston.path().size() + 1);
+        helper.setBlock(payloadStart, Blocks.REDSTONE_BLOCK);
+        // Use real neighbor notifications, without forcing desiredPowered: the
+        // regression is in the signal sampling, not the movement state machine.
+        helper.setBlock(BASE.west(), Blocks.REDSTONE_BLOCK);
+        helper.runAtTickTime(35, () -> {
+            helper.assertValueEqual(piston.movementState(), MovementState.EXTENDED, "did not extend");
+            helper.assertBlockPresent(Blocks.REDSTONE_BLOCK, payloadEnd);
+            helper.setBlock(BASE.west(), Blocks.AIR);
+        });
+        helper.runAtTickTime(75, () -> assertRedstonePayloadRetracted(helper, piston, sticky,
+                payloadStart, payloadEnd));
+        helper.runAtTickTime(105, () -> {
+            assertRedstonePayloadRetracted(helper, piston, sticky, payloadStart, payloadEnd);
+            helper.succeed();
+        });
+    }
+
+    private static void assertRedstonePayloadRetracted(GameTestHelper helper,
+                                                       ExtendedPistonBlockEntity piston, boolean sticky,
+                                                       BlockPos payloadStart, BlockPos payloadEnd) {
+        helper.assertValueEqual(piston.movementState(), MovementState.RETRACTED,
+                "redstone payload prevented full retraction");
+        helper.assertValueEqual(piston.headIndex(), -1, "head did not return to base");
+        helper.assertFalse(piston.desiredPowered(), "payload powered its own piston");
+        helper.assertBlockProperty(BASE, ExtendedPistonBlock.EXTENDED, false);
+        helper.assertBlockProperty(BASE, ExtendedPistonBlock.ACTIVE, false);
+        helper.assertBlockPresent(Blocks.REDSTONE_BLOCK, sticky ? payloadStart : payloadEnd);
+    }
+
+    @GameTest(template = "empty", timeoutTicks = 100)
+    public static void upwardPistonStillAcceptsExternalQuasiPower(GameTestHelper helper) {
+        ExtendedPistonBlockEntity piston = placeFacing(helper, true, Direction.UP, Direction.UP);
+        BlockPos source = BASE.above().west();
+        helper.setBlock(source, Blocks.REDSTONE_BLOCK);
+        // Quasi-connectivity requires a separate neighbor update at the base.
+        helper.getLevel().updateNeighborsAt(helper.absolutePos(BASE.west()), Blocks.STONE);
+        helper.runAtTickTime(25, () -> {
+            helper.assertValueEqual(piston.movementState(), MovementState.EXTENDED, "quasi-power ignored");
+            helper.setBlock(source, Blocks.AIR);
+            helper.getLevel().updateNeighborsAt(helper.absolutePos(BASE.west()), Blocks.STONE);
+        });
+        helper.runAtTickTime(28, () -> helper.setBlock(BASE.west(), Blocks.REDSTONE_BLOCK));
+        helper.runAtTickTime(60, () -> {
+            helper.assertValueEqual(piston.movementState(), MovementState.EXTENDED,
+                    "external power did not reverse retraction");
+            helper.succeed();
+        });
+    }
+
     private static ExtendedPistonBlockEntity place(GameTestHelper helper, boolean sticky,
                                                     Direction... additionalDirections) {
         return placeFacing(helper, sticky, Direction.EAST, additionalDirections);

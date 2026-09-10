@@ -121,6 +121,10 @@ public class ExtendedPistonBlock extends BaseEntityBlock {
         }
         BlockPos above = pos.above();
         for (Direction direction : Direction.values()) {
+            // The cell two blocks above an upward-facing base is in front of
+            // its head. Sampling it through quasi-connectivity lets a redstone
+            // payload repower its own piston at the last retraction step.
+            if (facing == Direction.UP && direction == Direction.UP) continue;
             if (direction != Direction.DOWN && level.hasSignal(above.relative(direction), direction)) {
                 return true;
             }

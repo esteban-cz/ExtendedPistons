@@ -18,7 +18,7 @@ redstone contraptions without modifying vanilla piston behavior.
 * NeoForge 21.1.1 or a newer 21.1.x release
 * Java 21
 
-Place `extendedpistons-1.1.2.jar` in the instance's `mods` directory on both the
+Place `extendedpistons-1.1.3.jar` in the instance's `mods` directory on both the
 server and every connecting client.
 
 The mod has no required dependencies beyond Minecraft and NeoForge.
@@ -263,13 +263,16 @@ The automated test suite contains:
 The suite also verifies that replacement pistons receive a fresh path and that
 every Extended Piston base shape matches its vanilla equivalent.
 
+Redstone regression tests cover upward-facing normal and sticky pistons,
+longer paths, horizontal sticky pistons, and external power during retraction.
+
 Entity tests include a connected server player being lifted by an
 upward-moving payload.
 
 The release artifact is produced at:
 
 ```text
-build/libs/extendedpistons-1.1.2.jar
+build/libs/extendedpistons-1.1.3.jar
 ```
 
 ## BMC5 development testing
@@ -312,11 +315,14 @@ are documented in the [project roadmap](ROADMAP.md).
 
 ## Version baselines
 
-Verified releases from 1.0.0 through 1.1.1 are preserved under their matching
+Verified releases from 1.0.0 through 1.1.3 are preserved under their matching
 `releases/` directories and are not affected by Gradle clean/build operations.
 
 Version 1.1.2 widens the verified NeoForge 1.21.1 runtime range without changing
 world data or gameplay behavior.
+
+Version 1.1.3 fixes upward-facing pistons being repowered by their redstone
+payload during retraction and gives moving parts a readable display name.
 
 Archived JARs can therefore be compared directly against the current release.
 
@@ -332,4 +338,3 @@ terms of the GPLv3. Modified and redistributed versions must remain licensed
 under the GPLv3 and retain the applicable copyright and license notices.
 
 Copyright © 2026 estyxq
-
